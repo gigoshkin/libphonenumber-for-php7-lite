@@ -1,0 +1,91 @@
+{
+  "name": "gigoshkin/libphonenumber-for-php7-lite",
+  "type": "library",
+  "description": "Lite version of libphonenumber-for-php - PHP Port of Google's libphonenumber based on latest version with PHP7 support - 8.13.46",
+  "keywords": [
+    "phonenumber",
+    "libphonenumber",
+    "mobile",
+    "validation",
+    "geocoding",
+    "geolocation"
+  ],
+  "homepage": "https://github.com/gigoshkin/libphonenumber-for-php7-lite",
+  "license": "Apache-2.0",
+  "support": {
+    "source": "https://github.com/gigoshkin/libphonenumber-for-php7-lite",
+    "issues": "https://github.com/gigoshkin/libphonenumber-for-php7-lite/issues"
+  },
+  "authors": [
+    {
+      "name": "Giorgi Kiknadze",
+      "email": "gigoshkin@gmail.com"
+    },
+    {
+      "name": "Joshua Gigg",
+      "email": "giggsey@gmail.com",
+      "homepage": "https://giggsey.com/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "libphonenumber\\": "src/"
+    },
+    "exclude-from-classmap": [
+        "/src/data/"
+    ]
+
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "libphonenumber\\buildtools\\": "build/",
+      "libphonenumber\\Tests\\": "tests/"
+    }
+  },
+  "archive": {
+    "exclude": [
+      "build/",
+      "docs/",
+      "tests/",
+      ".github/",
+      ".editorconfig",
+      ".gitattributes",
+      ".gitignore",
+      ".styleci.yml",
+      ".travis.yml",
+      "build.xml",
+      "phpunit.xml.dist",
+      "phpunit",
+      "src/CountryCodeToRegionCodeMapForTesting.php"
+    ]
+  },
+  "require": {
+    "php": ">=7.0",
+    "giggsey/locale": "^1.7|^2.0",
+    "symfony/polyfill-mbstring": "^1.17"
+  },
+  "require-dev": {
+    "phing/phing": "^2.7",
+    "pear/versioncontrol_git": "^0.5",
+    "pear/pear-core-minimal": "^1.9",
+    "pear/pear_exception": "^1.0",
+    "symfony/console": "^2.8|^3.0|^v4.4|^v5.2",
+    "php-coveralls/php-coveralls": "^1.0|^2.0",
+    "symfony/phpunit-bridge": "^4.4 || ^5.4 || ^6.0"
+  },
+  "replace": {
+    "giggsey/libphonenumber-for-php-lite": "self.version"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "8.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "./phpunit",
+    "metadata": "vendor/bin/phing compile"
+  },
+  "suggest": {
+    "giggsey/libphonenumber-for-php": "For full featured phone number validation"
+  }
+}
