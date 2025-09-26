@@ -22,5 +22,5 @@ Add this to your composer.json:
       }
     ]
 ```
-Then run `composer install gigoshkin/libphonenumber-for-php7-lite`
+Then run `composer require gigoshkin/libphonenumber-for-php7-lite`
 
